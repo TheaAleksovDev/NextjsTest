@@ -22,6 +22,10 @@ export const StyledTitle = styled((props) => <SectionHeading {...props} />)`
   color: black;
   text-align: center;
   line-height: 3.2rem;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 2.4rem;
+  }
 `;
 
 export const StyledDescription = styled((props) => (
@@ -31,6 +35,10 @@ export const StyledDescription = styled((props) => (
   text-align: center;
   line-height: 1.8rem;
   font-weight: 400;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 1.15rem;
+  }
 `;
 
 export const StyledTextContainer = styled(({ ...props }) => <div {...props} />)`
@@ -60,4 +68,13 @@ export const StyledContentContainer = styled(({ ...props }) => (
   justify-content: center;
   align-items: center;
   gap: 4.5rem;
+  overflow: hidden;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    background-size: 130%;
+    background-position-x: -4rem;
+    background-position-y: 7rem;
+    width: 100%;
+  }
 `;

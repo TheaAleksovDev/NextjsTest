@@ -1,7 +1,6 @@
 import {
   CardContainer,
   CardTitle,
-  CardImage,
   CardParagraph,
   CardTextContainer,
   CardImageContainer,
@@ -11,7 +10,7 @@ import Image from "next/image";
 
 export const Card = (props) => {
   const getWidth = () => {
-    return props.i === 0 ? 15.7 : props.i === 1 ? 18 : 20;
+    return props.i === 0 ? 16 : props.i === 1 ? 18 : 20;
   };
 
   const getBackgroundColor = () => {

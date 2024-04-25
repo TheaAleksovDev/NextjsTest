@@ -23,7 +23,7 @@ export const CardContainer = styled(({ backgroundColor, ...props }) => (
   <div {...props} />
 ))`
   height: fit-content;
-  padding: 1rem 3rem 1rem 0;
+  padding: 1rem 2rem 1rem 0;
   box-sizing: border-box;
   background-color: ${({ backgroundColor }) => backgroundColor};
   display: flex;
@@ -39,6 +39,11 @@ export const CardContainer = styled(({ backgroundColor, ...props }) => (
   &:hover .card-title {
     color: #006efd;
     text-decoration: underline;
+  }
+
+  @media screen and (max-width: 1024px) {
+    transform: scale(0.95);
+    transform-origin: left top;
   }
 `;
 
@@ -57,11 +62,16 @@ export const CardParagraph = styled(({ width, ...props }) => (
   margin: 0;
   width: ${({ width }) => width}rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5rem;
 `;
 
-export const CardTextContainer = styled(({ ...props }) => <div {...props} />)``;
+export const CardTextContainer = styled(({ ...props }) => <div {...props} />)`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: flex-start;
+`;
 
 export const CardImageContainer = styled(({ ...props }) => <div {...props} />)`
   width: 8rem;
@@ -71,5 +81,5 @@ export const CardImageContainer = styled(({ ...props }) => <div {...props} />)`
 `;
 
 export const CardImageWrapper = styled(({ ...props }) => <div {...props} />)`
-  max-width: 40%;
+  max-width: 38%;
 `;
