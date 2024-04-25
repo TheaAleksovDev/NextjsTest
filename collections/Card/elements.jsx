@@ -28,6 +28,18 @@ export const CardContainer = styled(({ backgroundColor, ...props }) => (
   background-color: ${({ backgroundColor }) => backgroundColor};
   display: flex;
   border-radius: 0.5rem;
+  box-shadow: 0 0 0 1px transparent;
+  transition: box-shadow 0.25s ease;
+
+  &:hover {
+    box-shadow: 0 0 0 1px #006efd;
+    cursor: pointer;
+  }
+
+  &:hover .card-title {
+    color: #006efd;
+    text-decoration: underline;
+  }
 `;
 
 export const CardTitle = styled((props) => <SectionTinyHeading {...props} />)`
@@ -36,6 +48,7 @@ export const CardTitle = styled((props) => <SectionTinyHeading {...props} />)`
   line-height: 2rem;
   color: black;
   font-weight: bold;
+  transition: color 0.25s ease, underline 0.25s ease;
 `;
 
 export const CardParagraph = styled(({ width, ...props }) => (

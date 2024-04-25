@@ -10,7 +10,6 @@ import {
 import Image from "next/image";
 
 export const Card = (props) => {
-
   const getWidth = () => {
     return props.i === 0 ? 15.7 : props.i === 1 ? 18 : 20;
   };
@@ -28,7 +27,7 @@ export const Card = (props) => {
         </CardImageWrapper>
       </CardImageContainer>
       <CardTextContainer>
-        <CardTitle>{props.title}</CardTitle>
+        <CardTitle className="card-title">{props.title}</CardTitle>
         <CardParagraph
           width={getWidth()}
           dangerouslySetInnerHTML={{ __html: props.desc }}
