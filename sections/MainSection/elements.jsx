@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {
   SectionContainer,
-  SectionBigHeading,
+  SectionHeading,
   SectionSubheading,
 } from "~/components";
 
@@ -14,18 +14,23 @@ export const StyledContainer = styled(({ height, ...props }) => (
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: auto;
+  height: fit-content;
 `;
 
-export const StyledTitle = styled((props) => <SectionBigHeading {...props} />)`
+export const StyledTitle = styled((props) => <SectionHeading {...props} />)`
   margin: 0;
   color: black;
+  text-align: center;
+  line-height: 3.2rem;
 `;
 
 export const StyledDescription = styled((props) => (
   <SectionSubheading {...props} />
 ))`
-  margin: 1.563rem 0 0;
+  margin: 0;
+  text-align: center;
+  line-height: 1.8rem;
+  font-weight: 400;
 `;
 
 export const StyledTextContainer = styled(({ ...props }) => <div {...props} />)`
@@ -38,7 +43,7 @@ export const StyledTextContainer = styled(({ ...props }) => <div {...props} />)`
 export const StyledImageContainer = styled(({ ...props }) => (
   <div {...props} />
 ))`
-  height: 100%;
+  width: 20rem;
   display: flex;
   justify-content: center;
 `;
@@ -46,9 +51,13 @@ export const StyledImageContainer = styled(({ ...props }) => (
 export const StyledContentContainer = styled(({ ...props }) => (
   <div {...props} />
 ))`
-  height: 100%;
-  width: 100%;
+  margin-top: 3rem;
+  background: url(${({ backgroundUrl }) => backgroundUrl}) no-repeat;
+  background-size: contain;
+  width: 88%;
+  height: fit-content;
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  align-items: center;
+  gap: 4.5rem;
 `;

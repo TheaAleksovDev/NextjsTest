@@ -9,6 +9,7 @@ const heroProps = {
 
 const mainProps = {
   image: { src: "/img/video.png", alt: "", width: 658, height: 1050 },
+  background: "/img/background.png",
   title: "Managed agency selection",
   description: "Strengthen your onboarding process",
 };
