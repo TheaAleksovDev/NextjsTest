@@ -16,15 +16,16 @@ export const CardsContainer = styled(({ height, ...props }) => (
   display: flex;
   flex-direction: column;
   gap: 2.2rem;
-  justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 `;
 
-export const CardContainer = styled(({ ...props }) => <div {...props} />)`
+export const CardContainer = styled(({ backgroundColor, ...props }) => (
+  <div {...props} />
+))`
   height: fit-content;
   padding: 1rem 3rem 1rem 0;
   box-sizing: border-box;
-  background-color: #f9f9f9;
+  background-color: ${({ backgroundColor }) => backgroundColor};
   display: flex;
   border-radius: 0.5rem;
 `;
@@ -37,9 +38,11 @@ export const CardTitle = styled((props) => <SectionTinyHeading {...props} />)`
   font-weight: bold;
 `;
 
-export const CardParagraph = styled((props) => <SectionParagraph {...props} />)`
+export const CardParagraph = styled(({ width, ...props }) => (
+  <SectionParagraph {...props} />
+))`
   margin: 0;
-  width: 15.7rem;
+  width: ${({ width }) => width}rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5rem;
@@ -49,4 +52,11 @@ export const CardTextContainer = styled(({ ...props }) => <div {...props} />)``;
 
 export const CardImageContainer = styled(({ ...props }) => <div {...props} />)`
   width: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const CardImageWrapper = styled(({ ...props }) => <div {...props} />)`
+  max-width: 40%;
 `;
