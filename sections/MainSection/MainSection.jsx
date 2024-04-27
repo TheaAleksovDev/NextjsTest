@@ -3,7 +3,6 @@ import {
   StyledDescription,
   StyledImageContainer,
   StyledTitle,
-  StyledTextContainer,
   StyledContentContainer,
   CardsContainer,
   Card,
@@ -35,7 +34,7 @@ const cardsData = [
   },
   {
     title: "Pitch",
-    desc: "Comperhensive <span style='font-weight: bold;'>pitch management</span> including comms, diary management and pitch hosting.",
+    desc: "Comperhensive <span style='font-weight: bold;'>pitch management</span>, including comms, diary management and pitch hosting.",
     img: {
       src: "/img/icons/Pitch.png",
       alt: "pitch-icon",
