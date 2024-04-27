@@ -55,7 +55,7 @@ export const MainSection = ({
     <StyledContainer {...props}>
       <StyledTitle>{title}</StyledTitle>
       <StyledDescription>{description}</StyledDescription>
-      <StyledContentContainer backgroundUrl={background}>
+      <StyledContentContainer background={background}>
         <StyledImageContainer>
           <Image
             src={image.src}

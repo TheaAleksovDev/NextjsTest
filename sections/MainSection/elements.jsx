@@ -79,7 +79,7 @@ export const StyledContentContainer = styled(({ ...props }) => (
   <div {...props} />
 ))`
   margin-top: 3rem;
-  background: url(${({ backgroundUrl }) => backgroundUrl}) no-repeat;
+  background: url(${({ background }) => background}) no-repeat;
   background-size: contain;
   width: 90%;
   height: fit-content;
