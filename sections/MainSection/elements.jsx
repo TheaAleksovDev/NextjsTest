@@ -5,6 +5,8 @@ import {
   SectionSubheading,
 } from "~/components";
 
+import { Card as CardComponent } from "../../collections/Card";
+
 export const StyledContainer = styled(({ height, ...props }) => (
   <SectionContainer {...props} />
 ))`
@@ -54,6 +56,10 @@ export const StyledImageContainer = styled(({ ...props }) => (
   width: 20rem;
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: 1024px) {
+    width: 17.5rem;
+  }
 `;
 
 export const StyledContentContainer = styled(({ ...props }) => (
@@ -72,9 +78,24 @@ export const StyledContentContainer = styled(({ ...props }) => (
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
-    background-size: 130%;
-    background-position-x: -4rem;
-    background-position-y: 7rem;
+    background-size: 150%;
+    background-position-x: -4.5rem;
     width: 100%;
   }
 `;
+
+export const CardsContainer = styled(({ height, ...props }) => (
+  <SectionContainer {...props} />
+))`
+  margin: 0;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  align-items: flex-start;
+`;
+
+export const Card = ({ ...props }) => {
+  return <CardComponent {...props} />;
+};

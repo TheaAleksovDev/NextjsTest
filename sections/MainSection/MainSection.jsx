@@ -5,10 +5,9 @@ import {
   StyledTitle,
   StyledTextContainer,
   StyledContentContainer,
+  CardsContainer,
+  Card,
 } from "./elements";
-
-import { Card } from "../../collections/Card";
-import { CardsContainer } from "../../collections/Card/elements";
 
 import Image from "next/image";
 
@@ -16,13 +15,13 @@ const cardsData = [
   {
     title: "Brief",
     desc: "Complete <span style='font-weight: bold;'>brief writing or simple guidance</span> on what to include, we've got you covered.",
-    img: "/img/icons/Brief.png",
     img: {
       src: "/img/icons/Brief.png",
       alt: "brief-icon",
       width: 563,
       height: 587,
     },
+    link: "https://goodbrief.io/",
   },
   {
     title: "Search",
@@ -54,7 +53,7 @@ export const MainSection = ({
   ...props
 }) => {
   return (
-    <StyledContainer>
+    <StyledContainer {...props}>
       <StyledTitle>{title}</StyledTitle>
       <StyledDescription>{description}</StyledDescription>
       <StyledContentContainer backgroundUrl={background}>
@@ -75,6 +74,7 @@ export const MainSection = ({
                 title={card.title}
                 desc={card.desc}
                 img={card.img}
+                link={card.link}
               />
             );
           })}

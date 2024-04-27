@@ -9,17 +9,21 @@ import {
 import Image from "next/image";
 
 export const Card = (props) => {
-  const getWidth = () => {
-    return props.i === 0 ? 16 : props.i === 1 ? 18 : 20;
-  };
-
   const getBackgroundColor = () => {
     return props.i === 0 ? "#f9f9f9" : props.i === 1 ? "#F4F4F4" : "#F1F1F1";
   };
 
-  console.log(`${getWidth()}`);
+  const handleCardClick = () => {
+    if (props.link) {
+      window.open(props.link, "_blank");
+    }
+  };
+
   return (
-    <CardContainer backgroundColor={getBackgroundColor()}>
+    <CardContainer
+      backgroundColor={getBackgroundColor()}
+      onClick={handleCardClick}
+    >
       <CardImageContainer>
         <CardImageWrapper>
           <Image src={props.img}></Image>
@@ -28,7 +32,7 @@ export const Card = (props) => {
       <CardTextContainer>
         <CardTitle className="card-title">{props.title}</CardTitle>
         <CardParagraph
-          width={getWidth()}
+          index={props.i}
           dangerouslySetInnerHTML={{ __html: props.desc }}
         ></CardParagraph>
       </CardTextContainer>

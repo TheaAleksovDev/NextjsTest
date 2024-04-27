@@ -7,18 +7,6 @@ import {
   SectionInnerHeading,
 } from "~/components";
 
-export const CardsContainer = styled(({ height, ...props }) => (
-  <SectionContainer {...props} />
-))`
-  margin: 0;
-  width: fit-content;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  gap: 2.2rem;
-  align-items: flex-start;
-`;
-
 export const CardContainer = styled(({ backgroundColor, ...props }) => (
   <div {...props} />
 ))`
@@ -40,11 +28,6 @@ export const CardContainer = styled(({ backgroundColor, ...props }) => (
     color: #006efd;
     text-decoration: underline;
   }
-
-  @media screen and (max-width: 1024px) {
-    transform: scale(0.95);
-    transform-origin: left top;
-  }
 `;
 
 export const CardTitle = styled((props) => <SectionTinyHeading {...props} />)`
@@ -54,16 +37,26 @@ export const CardTitle = styled((props) => <SectionTinyHeading {...props} />)`
   color: black;
   font-weight: bold;
   transition: color 0.25s ease, underline 0.25s ease;
+
+  @media screen and (max-width: 1024px) {
+    line-height: 1.5rem;
+  }
 `;
 
-export const CardParagraph = styled(({ width, ...props }) => (
+export const CardParagraph = styled(({ index, ...props }) => (
   <SectionParagraph {...props} />
 ))`
   margin: 0;
-  width: ${({ width }) => width}rem;
+  width: ${({ index }) => (index === 0 ? 16 : index === 1 ? 18 : 20)}rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5rem;
+
+  @media screen and (max-width: 1024px) {
+    width: ${({ index }) => (index === 0 ? 14.2 : index === 1 ? 16 : 18)}rem;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+  }
 `;
 
 export const CardTextContainer = styled(({ ...props }) => <div {...props} />)`
@@ -82,4 +75,8 @@ export const CardImageContainer = styled(({ ...props }) => <div {...props} />)`
 
 export const CardImageWrapper = styled(({ ...props }) => <div {...props} />)`
   max-width: 38%;
+
+  @media screen and (max-width: 1024px) {
+    max-width: 35%;
+  }
 `;
